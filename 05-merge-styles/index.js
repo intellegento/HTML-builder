@@ -12,6 +12,7 @@ objInFolder.then(files => files.forEach(file => {
     const pathToFile = path.resolve(__dirname, 'styles', file.name);
     const fileName = path.basename(pathToFile);
     const extFile = path.extname(pathToFile);
+    
     if (extFile === '.css') {
       const input = fs.createReadStream(pathToFile, 'utf-8');
       input.on('data', data => {
